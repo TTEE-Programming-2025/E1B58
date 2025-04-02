@@ -53,7 +53,8 @@ int main(void)
         } else {
         printf("E1B58ºµ²Ð¦ë\n");
         }
-
+        system("pause");
+		system("CLS"); 
 		
 		 
 	}
@@ -62,14 +63,6 @@ int main(void)
 		printf("%c",'\a');
 		printf("µ²§ôµ{¦¡");
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	system("pause");
 	return 0;
 		
