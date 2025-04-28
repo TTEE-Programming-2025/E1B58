@@ -6,8 +6,7 @@
 int main(void)
 {
 	//密碼 
-	int password,i,attempts=0,j,k,math;
-	char ch,chwork;
+	int password,i,attempts=0;
 	for(i=0;i<=21;i++)
 	{
 		printf("|@|$|?|%|\n");
@@ -36,63 +35,100 @@ int main(void)
 			}
 		}
 	}
-    main:
-	printf("--------------------------\n");
-	printf("| a. 畫出直角三角形      |\n");
-	printf("| b. 顯示乘表法   	 |\n");
-	printf("| c. 結束		 |\n");
-	printf("--------------------------\n");
-	ch=getche();//偵測並回覆 
-	printf("\n");
-	//直角三角形 
-	if(ch=='A'||ch=='a')
+   //選單
+    char choice,c,l;
+	int j,k;while (1) 
 	{
-		system("CLS");
-		printf("請輸入a~n的字元\n");
-		fflush(stdin);
-		chwork=getche();
-		while(chwork<'a'||chwork>'n')
+        system("CLS"); 
+        printf("=====================\n");
+        printf("| a. 畫直角三角形     |\n");
+        printf("| b. 顯示乘法表       |\n");
+        printf("| c. 結束             |\n");
+        printf("=====================\n");
+        printf("請輸入選項(a/b/c)：");
+
+        choice = getch();
+        printf("%c\n", choice);
+        if (choice == 'a' || choice == 'A') 
 		{
-			printf("\n請輸入a~n的字元\n");
-			chwork=getche();
-		}
-		system("CLS");
-		int rows=chwork-'a'+1;
-		for (i=1;i<=rows;i++) 
-		{
-			for(k=0;k<rows-i;k++)
+            system("CLS");
+            char end_char;
+            printf("請輸入一個從 'a' 到 'n' 的字母：");
+            scanf(" %c", &end_char);
+
+            if (end_char>='a'&&end_char<='n') 
 			{
-				printf(" ");
-			}
-        	for (j=0;j<i;j++) 
+                for (c='a'; c<=end_char;c++) 
+				{
+                    for (l='a';l<=c;l++) 
+					{
+                        printf("%c ",l);
+                    }
+                    printf("\n");
+                }system("pause");
+            } else 
 			{
-            printf("%c", 'a' +j);
+                printf("輸入錯誤，請重新輸入！\n");
+                getch();
             }
-        printf("\n");
-    	}
-	}
-	//99乘法表 
-	else if(ch=='B'||ch=='b')
-	{
-		system("CLS");
-		printf("請輸入1~9的整數n\n");
-		scanf("%d",&math);
-		while(math<1||math>9)
+
+        } 
+		else if (choice=='b'||choice=='B') 
 		{
-			printf("請輸入1~9的整數n\n");
-			scanf("%d",&math);
-		}
-		for(i=1;i<=math;i++)
-		{
-			printf("\n");
-			for(j=1;j<=math;j++)
+            system("CLS");
+            int n;
+            printf("請輸入 1 到 9 的整數：");
+            scanf("%d", &n);
+
+            if (n>=1&&n<= 9) 
 			{
-				printf("%dx%d=%-4d",i,j,i*j);
-			}
-		}
-	}
-	return 0;
+                for (j=1;j<=n;j++) 
+				{
+                    for (k=1;k<=n;k++) 
+					{
+                        printf("%d*%d=%2d ", j,k,j*k);
+                    }
+                    printf("\n");
+                }system("pause");
+            } 
+			else 
+			{
+                printf("輸入錯誤，請重新輸入！\n");
+                getch();
+            }
+
+        } 
+		else if (choice=='c'||choice=='C') 
+		{
+            char confirm;
+            printf("Continue? (y/n)：");
+            confirm = getch();
+            printf("%c\n", confirm);
+
+            if (confirm=='y'||confirm=='Y') 
+			{
+                continue; // back to meun
+            } else if (confirm=='n'||confirm=='N') 
+			{
+                printf("結束程式。\n");
+                break; 
+                //finish
+            } else 
+			{
+                printf("輸入錯誤，請重新輸入！\n");
+                getch();
+            }
+        } 
+		else 
+		{
+            printf("無效的選項，請重新輸入！\n");
+            getch();
+        }
+    }
+	system("pause");
+    return 0;
 }
+
 
 
 	
