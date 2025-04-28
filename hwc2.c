@@ -44,7 +44,8 @@ int main(void)
 	printf("--------------------------\n");
 	ch=getche();//偵測並回覆 
 	printf("\n");
-	if(ch=='A'||ch=='a')//3.直角三角形 
+	//直角三角形 
+	if(ch=='A'||ch=='a')
 	{
 		system("CLS");
 		printf("請輸入a~n的字元\n");
@@ -56,8 +57,8 @@ int main(void)
 			chwork=getche();
 		}
 		system("CLS");
-		int rows=chwork-'a'+1;//宣告rows變數=chwork的 ascii code -'a'+1(決定要印幾行(橫的))  
-		for (i=1;i<=rows;i++) //
+		int rows=chwork-'a'+1;
+		for (i=1;i<=rows;i++) 
 		{
 			for(k=0;k<rows-i;k++)
 			{
@@ -69,6 +70,26 @@ int main(void)
             }
         printf("\n");
     	}
+	}
+	//99乘法表 
+	else if(ch=='B'||ch=='b')
+	{
+		system("CLS");
+		printf("請輸入1~9的整數n\n");
+		scanf("%d",&math);
+		while(math<1||math>9)
+		{
+			printf("請輸入1~9的整數n\n");
+			scanf("%d",&math);
+		}
+		for(i=1;i<=math;i++)
+		{
+			printf("\n");
+			for(j=1;j<=math;j++)
+			{
+				printf("%dx%d=%-4d",i,j,i*j);
+			}
+		}
 	}
 	return 0;
 }
