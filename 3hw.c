@@ -147,7 +147,23 @@ int main(void)
                 printf("\n");
             }
         }
-}
-    
-return 0;
+//choose d (left or continue) 
+else if (choice == 'd') {
+            char again;
+            printf("Continue? (y/n)：");
+            scanf(" %c", &again);
+            if (again == 'y') continue;
+            else {
+                printf("感謝使用，再見！\n");
+                break;
+            }
+        }
+
+        else {
+            printf("無效選項。\n");
+        }
+    }
+
+	system("pause");
+	return 0;
 }
