@@ -7,21 +7,21 @@ int main(void)
 	int password,attempts=0,i,j,k;
 	int seats[9][9];
 	int wrong=0;
-	//個人風格 
+	//Personal style
 	printf("$$$$$$$$$\n");
 	printf(" $$$$$$$\n");
 	printf("  E1B58\n");
 	printf("   $$$\n");
 	printf("    $\n");
-	//輸入密碼最多進行三次 
+	//Enter the password a maximum of three times
 	while(attempts<3)
 	{
-		printf("密碼為2025\n");
-		printf("請輸入密碼:");
+		printf("Password is 2025\n");
+		printf("Enter your password:");
 		scanf("%d",&password);
 		if(password==2025)
 		{
-			printf("密碼正確:");
+			printf("The password is correct:");
 			system("CLS");
 			break;
 		}
@@ -30,11 +30,11 @@ int main(void)
 			attempts++;
 			if(attempts<3)
 			{
-				printf("密碼錯誤");
+				printf("The password is incorrect.");
 			}
 			else
 			{
-				printf("密碼錯誤三次，程式結束");
+				printf("Too many incorrect attempts and program will exit.");
 			}
 		}
 	}
@@ -42,7 +42,7 @@ int main(void)
     for (j = 0; j < 9; j++)
     seats[i][j] = 0;
     char choice;
-    //主選單出現 
+    //The main meun pops up.
     while (1) {
         printf("\n---------[Booking System]---------\n");
         printf("a. Available seats\n");
@@ -50,9 +50,9 @@ int main(void)
         printf("c. Choose by yourself\n");
         printf("d. Exit\n");
         printf("----------------------------------\n");
-        printf("請選擇：");
+        printf("Please select.：");
         scanf(" %c", &choice);
-        //選擇 a 部分       
+        //choose a   
 	    if (choice == 'a') {
             printf(" 123456789\n");
             for (i = 8; i >= 0; i--) {
@@ -68,10 +68,10 @@ int main(void)
  //choose b
  else if (choice == 'b') {
             int need;
-            printf("需要幾個座位？(1~4)：");
+            printf("How many seat do you need？(1~4)：");
             scanf("%d", &need);
             if (need < 1 || need > 4) {
-                printf("數量不合法。\n");
+                printf("Incorrect quantity.\n");
                 continue;
             }
      int found = 0;
@@ -94,7 +94,7 @@ int main(void)
             }
 
             if (!found) {
-                printf("找不到連續座位。\n");
+                printf("There're not seats available side by side.\n");
                 continue;
             }
 
@@ -110,7 +110,7 @@ int main(void)
             }
 
             char ok;
-            printf("是否滿意這些座位？(y/n)：");
+            printf("Do you like this seat？(y/n)：");
             scanf(" %c", &ok);
             for (i = 0; i < 9; i++) {
                 for (j = 0; j < 9; j++) {
@@ -124,14 +124,14 @@ int main(void)
 //choose c
   else if (choice == 'c') {
             int col, row;
-            printf("請輸入座位（列-行，例如 3-5）：");
+            printf("Please enter your seat.For example(3-5).：");
             scanf("%d-%d", &col, &row);
             if (col < 1 || col > 9 || row < 1 || row > 9) {
-                printf("超出範圍。\n");
+                printf("Out of range.\n");
                 continue;
             }
             if (seats[row - 1][col - 1] != 0) {
-                printf("此座位已被預訂。\n");
+                printf("This seat has been taken.\n");
                 continue;
             }
             seats[row - 1][col - 1] = 1;
@@ -154,13 +154,13 @@ else if (choice == 'd') {
             scanf(" %c", &again);
             if (again == 'y') continue;
             else {
-                printf("感謝使用，再見！\n");
+                printf("Thanks for using my program.See you next time！\n");
                 break;
             }
         }
 
         else {
-            printf("無效選項。\n");
+            printf("Fail.\n");
         }
     }
 
