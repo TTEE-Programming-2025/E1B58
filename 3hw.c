@@ -121,6 +121,32 @@ int main(void)
                 }
             }
         }
+//choose c
+  else if (choice == 'c') {
+            int col, row;
+            printf("請輸入座位（列-行，例如 3-5）：");
+            scanf("%d-%d", &col, &row);
+            if (col < 1 || col > 9 || row < 1 || row > 9) {
+                printf("超出範圍。\n");
+                continue;
+            }
+            if (seats[row - 1][col - 1] != 0) {
+                printf("此座位已被預訂。\n");
+                continue;
+            }
+            seats[row - 1][col - 1] = 1;
+
+            printf(" 123456789\n");
+            for (i = 8; i >= 0; i--) {
+                printf("%d", i + 1);
+                for (j = 0; j < 9; j++) {
+                    if (seats[i][j] == 0) printf("-");
+                    else if (seats[i][j] == 1) printf("*");
+                    else if (seats[i][j] == 2) printf("@");
+                }
+                printf("\n");
+            }
+        }
 }
     
 return 0;
