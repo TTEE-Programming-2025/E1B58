@@ -34,9 +34,25 @@ int main(void)
 			}
 			else
 			{
-				printf("密碼錯誤達三次，程式即將結束");
+				printf("密碼錯誤三次，程式結束");
 			}
 		}
 	}
+	for (i = 0; i < 9; i++)
+    for (j = 0; j < 9; j++)
+    seats[i][j] = 0;
+    char choice;
+    //主選單出現 
+    while (1) {
+        printf("\n---------[Booking System]---------\n");
+        printf("a. Available seats\n");
+        printf("b. Arrange for you\n");
+        printf("c. Choose by yourself\n");
+        printf("d. Exit\n");
+        printf("----------------------------------\n");
+        printf("請選擇：");
+        scanf(" %c", &choice);
+        } 
+
 return 0;
 }
