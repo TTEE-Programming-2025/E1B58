@@ -52,7 +52,19 @@ int main(void)
         printf("----------------------------------\n");
         printf("請選擇：");
         scanf(" %c", &choice);
-        } 
-
+        //選擇 a 部分       
+	    if (choice == 'a') {
+            printf(" 123456789\n");
+            for (i = 8; i >= 0; i--) {
+                printf("%d", i + 1);
+                for (j = 0; j < 9; j++) {
+                    if (seats[i][j] == 0) printf("-");
+                    else if (seats[i][j] == 1) printf("*");
+                    else if (seats[i][j] == 2) printf("@");
+                }
+                printf("\n");
+            }
+        }
+}
 return 0;
 }
