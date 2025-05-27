@@ -187,4 +187,6 @@ void gradeRanking() {
     displayGrades();
 }
 }
+//這次有點晚才完成作業下次要盡早完成才不會太趕
+//程式的部分還是要持續精進 
 
