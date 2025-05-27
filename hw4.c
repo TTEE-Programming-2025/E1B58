@@ -28,5 +28,25 @@ int main() {
     //個人風格 
     for (i = 0; i <= 20; i++)
     printf("$$$~E1B58~$$$\n"); 
-    return 0;}
+    //密碼 
+    while (attempts < 3) {
+       
+        printf("請輸入密碼(hint:2025): ");
+        scanf("%d", &password);
+        if (password == 2025) {
+            printf("密碼正確\n");
+            system("cls");  
+            break;
+        } else {
+            attempts++;
+            if (attempts < 3) {
+                printf("密碼錯誤\n");
+            } else {
+                printf("密碼錯誤達三次，程式即將結束\n");
+                return 0;
+            }
+        }
+    }
+    } 
+    
 
